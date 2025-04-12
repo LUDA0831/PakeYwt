@@ -10,7 +10,9 @@ use tauri_plugin_window_state::StateFlags;
 use std::time::Duration;
 
 use app::{
-    invoke::{download_file, download_file_by_binary, send_notification},
+    invoke::{
+        close_window, download_file, download_file_by_binary, minimize_window, send_notification,
+    },
     setup::{set_global_shortcut, set_system_tray},
     window::set_window,
 };
@@ -45,6 +47,8 @@ pub fn run_app() {
             download_file,
             download_file_by_binary,
             send_notification,
+            close_window,
+            minimize_window,
         ])
         .setup(move |app| {
             let window = set_window(app, &pake_config, &tauri_config);

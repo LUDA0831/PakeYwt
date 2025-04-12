@@ -53,33 +53,33 @@ function isDownloadLink(url) {
 
 document.addEventListener('DOMContentLoaded', () => {
   const tauri = window.__TAURI__;
-  const appWindow = tauri.window.getCurrentWindow();
+  // const appWindow = tauri.window.getCurrentWindow();
   const invoke = tauri.core.invoke;
-
-  if (!document.getElementById('pake-top-dom')) {
-    const topDom = document.createElement('div');
-    topDom.id = 'pake-top-dom';
-    document.body.appendChild(topDom);
-  }
-
-  const domEl = document.getElementById('pake-top-dom');
-
-  domEl.addEventListener('touchstart', () => {
-    appWindow.startDragging();
-  });
-
-  domEl.addEventListener('mousedown', e => {
-    e.preventDefault();
-    if (e.buttons === 1 && e.detail !== 2) {
-      appWindow.startDragging();
-    }
-  });
-
-  domEl.addEventListener('dblclick', () => {
-    appWindow.isFullscreen().then(fullscreen => {
-      appWindow.setFullscreen(!fullscreen);
-    });
-  });
+  //
+  // if (!document.getElementById('pake-top-dom')) {
+  //   const topDom = document.createElement('div');
+  //   topDom.id = 'pake-top-dom';
+  //   document.body.appendChild(topDom);
+  // }
+  //
+  // const domEl = document.getElementById('pake-top-dom');
+  //
+  // domEl.addEventListener('touchstart', () => {
+  //   appWindow.startDragging();
+  // });
+  //
+  // domEl.addEventListener('mousedown', e => {
+  //   e.preventDefault();
+  //   if (e.buttons === 1 && e.detail !== 2) {
+  //     appWindow.startDragging();
+  //   }
+  // });
+  //
+  // domEl.addEventListener('dblclick', () => {
+  //   appWindow.isFullscreen().then(fullscreen => {
+  //     appWindow.setFullscreen(!fullscreen);
+  //   });
+  // });
 
   if (window['pakeConfig']?.disabled_web_shortcuts !== true) {
     document.addEventListener('keyup', event => {
@@ -223,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Rewrite the window.open function.
   const originalWindowOpen = window.open;
-  window.open = function (url, name, specs) {
+  window.open = function(url, name, specs) {
     // Apple login and google login
     if (name === 'AppleAuthentication') {
       //do nothing
@@ -255,9 +255,9 @@ document.addEventListener('DOMContentLoaded', () => {
   );
 });
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
   let permVal = 'granted';
-  window.Notification = function (title, options) {
+  window.Notification = function(title, options) {
     const { invoke } = window.__TAURI__.core;
     const body = options?.body || '';
     let icon = options?.icon || '';

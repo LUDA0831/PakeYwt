@@ -91,3 +91,17 @@ pub fn send_notification(app: AppHandle, params: NotificationParams) -> Result<(
         .unwrap();
     Ok(())
 }
+
+#[command]
+pub fn close_window(app: AppHandle) -> Result<(), String> {
+    let window: WebviewWindow = app.get_webview_window("pake").unwrap();
+    window.close().unwrap();
+    app.exit(0);
+    Ok(())
+}
+
+#[command]
+pub fn minimize_window(app: AppHandle) -> Result<(), String> {
+    app.hide().unwrap();
+    Ok(())
+}

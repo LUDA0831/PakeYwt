@@ -2,11 +2,11 @@ import { PakeCliOptions } from './types.js';
 
 export const DEFAULT_PAKE_OPTIONS: PakeCliOptions = {
   icon: '',
-  height: 780,
-  width: 1200,
-  fullscreen: false,
+  height: 1920,
+  width: 1080,
+  fullscreen: true,
   resizable: true,
-  hideTitleBar: false,
+  hideTitleBar: true,
   alwaysOnTop: false,
   appVersion: '1.0.0',
   darkMode: false,
@@ -21,13 +21,13 @@ export const DEFAULT_PAKE_OPTIONS: PakeCliOptions = {
   proxyUrl: "",
   debug: false,
   inject: [],
-  installerLanguage: 'en-US',
+  installerLanguage: 'zh-CN',
 };
 
 // Just for cli development
 export const DEFAULT_DEV_PAKE_OPTIONS: PakeCliOptions & { url: string } = {
   ...DEFAULT_PAKE_OPTIONS,
-  url: 'https://weread.qq.com',
+  url: 'http://175.27.171.26:8085',
   name: 'WeRead',
   hideTitleBar: true,
 };
