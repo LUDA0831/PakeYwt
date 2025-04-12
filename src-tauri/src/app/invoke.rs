@@ -102,6 +102,9 @@ pub fn close_window(app: AppHandle) -> Result<(), String> {
 
 #[command]
 pub fn minimize_window(app: AppHandle) -> Result<(), String> {
-    app.hide().unwrap();
+    // 获取窗口实例
+    let window: WebviewWindow = app.get_webview_window("pake").unwrap();
+    // 使用 WebviewWindow 的 minimize 方法来最小化窗口
+    window.minimize().map_err(|e| e.to_string())?;
     Ok(())
 }

@@ -1,7 +1,7 @@
 {
   "windows": [
     {
-      "url": "http://192.168.100.163:3000",
+      "url": "http://175.27.171.26:8085",
       "url_type": "web",
       "hide_title_bar": true,
       "fullscreen": true,

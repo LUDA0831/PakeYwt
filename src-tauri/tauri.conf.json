@@ -1,6 +1,6 @@
 {
   "productName": "阅微堂",
-  "identifier": "com.pake.weread",
+  "identifier": "com.pake.ywt",
   "version": "1.0.0",
   "app": {
     "withGlobalTauri": true,
