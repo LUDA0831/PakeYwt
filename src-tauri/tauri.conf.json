@@ -10,6 +10,7 @@
       "id": "pake-tray"
     }
   },
+  "mainBinaryName": "阅微堂",
   "build": {
     "frontendDist": "../dist"
   }
