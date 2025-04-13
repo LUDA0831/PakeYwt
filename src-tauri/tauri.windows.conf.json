@@ -13,7 +13,6 @@
     ],
     "targets": [
       "msi",
-      "nsis"
     ],
     "windows": {
       "digestAlgorithm": "sha256",
