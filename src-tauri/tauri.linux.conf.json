@@ -1,14 +1,24 @@
 {
   "productName": "YWT",
   "bundle": {
-    "icon": ["png/weread_512.png"],
+    "icon": [
+      "icons/icon.png"
+    ],
     "active": true,
     "linux": {
       "deb": {
-        "depends": ["curl", "wget"],
-        "files": { "/usr/share/applications/com-pake-weread.desktop": "assets/com-pake-weread.desktop" }
+        "depends": [
+          "curl",
+          "wget"
+        ],
+        "files": {
+          "/usr/share/applications/com-pake-weread.desktop": "assets/com-pake-weread.desktop"
+        }
       }
     },
-    "targets": ["deb", "appimage"]
+    "targets": [
+      "deb",
+      "appimage"
+    ]
   }
 }
