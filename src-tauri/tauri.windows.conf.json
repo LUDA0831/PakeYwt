@@ -12,7 +12,7 @@
       "icons/icon.ico"
     ],
     "targets": [
-      "msi",
+      "msi"
     ],
     "windows": {
       "digestAlgorithm": "sha256",
